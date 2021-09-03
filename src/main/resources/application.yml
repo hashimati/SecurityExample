@@ -1,0 +1,17 @@
+micronaut:
+  application:
+    name: securityExample
+  security:
+    authentication: bearer
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}"'
+  server:
+    ssl:
+      enabled: 'true'
+acme:
+  enabled: 'true'
+  tos-agree: 'true'
